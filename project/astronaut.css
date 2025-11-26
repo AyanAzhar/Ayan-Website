@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(ellipse at bottom, #0a0a0f 0%, #000 100%);
+    color: #fff;
+    overflow-x: hidden;
+}
+body {
+    padding-top: 80px; /* adjust height depending on your navbar size */
+}
+
+
+/* ------ Navbar ------ */
+.custom-nav {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 40px;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00eaff !important;
+    text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
+    letter-spacing: 2px;
+}
+
+.nav-links .nav-link {
+    color: #ccc !important;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+.nav-links .nav-link:hover {
+    color: #00eaff !important;
+    text-shadow: 0 0 10px #00eaff;
+}
+
+/* ------ Banner ------ */
+.banner {
+    height: 100vh;
+    padding: 0 80px;
+    background: linear-gradient(to right,
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0.2)),
+        url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1920&q=80')
+        no-repeat center right;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 40%, rgba(0, 200, 255, 0.2), transparent 60%),
+                radial-gradient(circle at 80% 60%, rgba(150, 0, 255, 0.15), transparent 70%);
+    z-index: 0;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 50%;
+}
+
+.banner h1 {
+    font-size: 4.5rem;
+    color: #00eaff;
+    text-shadow: 0 0 20px #00eaff, 0 0 40px #00eaff;
+}
+
+.banner p {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-top: 20px;
+}
+
+/* ------ Footer ------ */
+.footer {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 60px 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(0, 200, 255, 0.1), transparent 70%),
+                radial-gradient(circle at 80% 20%, rgba(150, 0, 255, 0.1), transparent 70%);
+    z-index: 0;
+}
+
+.footer-section {
+    position: relative;
+    z-index: 2;
+    margin: 20px 0;
+}
+
+.footer h3 {
+    color: #00eaff;
+    text-shadow: 0 0 10px #00eaff;
+}
+
+.footer a, .footer p {
+    color: #ccc;
+    transition: 0.3s;
+}
+
+.footer a:hover {
+    color: #00eaff;
+    text-shadow: 0 0 10px #00eaff;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.9);
+    color: #777;
+}
+
+/* ------ Responsive Fixes ------ */
+@media (max-width: 991px) {
+
+    .banner {
+        text-align: center;
+        padding: 120px 20px;
+    }
+
+    .banner-content {
+        max-width: 100%;
+    }
+
+    .banner h1 {
+        font-size: 3rem;
+    }
+
+    .nav-links {
+        gap: 20px !important;
+    }
+}
+
+
+
+
+
+
+
+.neon-btn {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  background: linear-gradient(180deg,#0bb3ff 0%, #0493ff 100%);
+  color: white;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.25);
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* subtle lift on hover */
+.neon-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 30px rgba(3,163,255,0.12);
+}
+
+/* moving neon gradient inside the button using ::before */
+.neon-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.06) 0%,
+    rgba(255,255,255,0.02) 20%,
+    rgba(255,255,255,0.06) 40%,
+    rgba(255,255,255,0.02) 60%,
+    rgba(255,255,255,0.06) 80%,
+    rgba(255,255,255,0.02) 100%);
+  background-size: 300% 100%;
+  transition: opacity 200ms ease;
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* thin neon outline that will animate in on hover */
+.neon-btn::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  border-radius: 8px;
+  background: linear-gradient(90deg,
+    rgba(0,230,255,0.0) 0%,
+    rgba(0,230,255,0.18) 20%,
+    rgba(120,80,255,0.25) 50%,
+    rgba(0,230,255,0.18) 80%,
+    rgba(0,230,255,0.0) 100%);
+  filter: blur(8px);
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 220ms ease, transform 220ms ease;
+  pointer-events: none;
+}
+
+/* hover state: bright neon outline + moving sheen */
+.neon-btn:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* animated sheen sweep when hovered */
+.neon-btn:hover::before {
+  animation: sheenMove 1.3s linear infinite;
+}
+
+/* strong glow under the button on hover */
+.neon-btn.hover-glow {
+  /* optional persistent glow class if you need */
+  box-shadow: 0 24px 40px rgba(0,160,255,0.18);
+}
+
+/* text neon text-shadow on hover for extra effect */
+.neon-btn span {
+  position: relative;
+  z-index: 1;
+  transition: text-shadow 200ms ease;
+}
+.neon-btn:hover span {
+  text-shadow:
+    0 0 6px rgba(0,210,255,0.85),
+    0 0 14px rgba(120,80,255,0.45);
+}
+
+/* sheen animation keyframes */
+@keyframes sheenMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* small responsive tweak */
+@media (max-width: 520px) {
+  .neon-btn { padding: 10px 16px; font-size: 14px; }
+}
+#box{
+background: radial-gradient(circle at 70% 40%, rgba(0, 200, 255, 0.2), transparent 60%),
+                radial-gradient(circle at 80% 60%, rgba(150, 0, 255, 0.15), transparent 70%);
+                color: white;
+}
+
+
+#links{
+  text-decoration: none;
+}

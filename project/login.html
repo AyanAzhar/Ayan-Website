@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOGIN</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="astronaut.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+
+      // Password Strength Checker
+      $("#pass").keyup(function () {
+        let length = $("#pass").val().length;
+
+        if (length >= 8) {
+          $("#e").html("STRONG").css("color", "lime");
+        } else if (length >= 5) {
+          $("#e").html("MEDIUM").css("color", "orange");
+        } else if (length >= 3) {
+          $("#e").html("WEAK").css("color", "red");
+        } else {
+          $("#e").html("AT LEAST 3 CHARACTERS").css("color", "yellow");
+        }
+      });
+
+      // Confirm Password Checker
+      $("#c_pass").keyup(function () {
+        let p = $("#pass").val();
+        let cp = $("#c_pass").val();
+
+        if (p === cp) {
+          $("#c").html("Password Match").css("color", "lime");
+        } else {
+          $("#c").html("Passwords Do Not Match").css("color", "red");
+        }
+      });
+
+    });
+  </script>
+
+</head>
+
+<body>
+
+  <!-- 🔵 Responsive Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark custom-nav fixed-top">
+    <div class="container-fluid">
+
+      <a class="navbar-brand logo">ASTRONOMY</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto nav-links">
+          <li class="nav-item"><a class="nav-link" href="astronaut.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link active" href="login.html">LOGIN</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">GALLERY</a></li>
+          <li class="nav-item"><a class="nav-link" href="about us.html">ABOUT US</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+
+      <div class="col-md-6 col-lg-4">
+
+        <div class="login-card p-4 shadow-lg">
+          <h1 class="text-center mb-4" style="color:#00eaff; text-shadow:0 0 10px #00eaff;">LOGIN</h1>
+
+          <form>
+
+            <label class="form-label">Enter Username</label>
+            <input type="text" class="form-control" placeholder="Enter username" required>
+            <br>
+
+            <label class="form-label">Enter Password</label>
+            <input type="password" class="form-control" id="pass" placeholder="Enter password" required>
+            <small id="e" class="mt-1 d-block"></small>
+            <br>
+
+            <label class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="c_pass" placeholder="Confirm password" required>
+            <small id="c" class="mt-1 d-block"></small>
+
+            <div class="d-flex justify-content-center mt-4">
+              <button class="btn btn-outline-info px-4">Login</button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <footer class="footer">
+    <div class="footer-section text-center">
+      <h3>Connect</h3>
+      <p>Email: contact@astronomy.com</p>
+      <p>Follow us on social media for the latest cosmic updates.</p>
+    </div>
+  </footer>
+
+  <div class="footer-bottom">© 2025 ASTRONOMY. All Rights Reserved.</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

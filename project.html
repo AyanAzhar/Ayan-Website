@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let arr = [1,1,2,4,4,5,5,6,7,9];
+let target = 10;
+
+let allp=[];
+
+for (let i=0; i< arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+    if (arr[i] + arr[j] === target 
+
+    ) {
+        allp.push([arr[i],arr[j]]);
+    }
+}
+}
+
+document.write("AllPairs:", allp)
+
+let uniquep=[];
+for(let p of allp) {
+let exists = uniquep.some(x => x[0] === p[0] && x[1] === p[1]);
+if (!exists) {
+    uniquep.push(p);
+}
+
+
+}
+
+document.write("Unique Pairs:", uniquep)
+
+
+
+let combop=[];
+for(let p of uniquep) {
+    let a = p[0];
+    let b = p[1];
+
+let exists = combop.some(x => 
+(x[0] === a && x[1] === b) ||
+(x[0] === b && x[1] === a)
+);
+
+if (!exists) {
+    combop.push([a,b]);
+}
+}
+
+document.write("COMBO PAIRS", combop)
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
